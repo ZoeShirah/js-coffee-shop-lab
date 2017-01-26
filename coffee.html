@@ -54,9 +54,11 @@
     var drinkOrdered = [];
     //var drinkType;
 
+    var espresso = document.getElementById("espresso");
+    var latte = document.getElementById("latte");
+    var hotChocolate = document.getElementById("hot-chocolate");
 
     function makeCoffee(drinkType){
-        console.log(drinkType);
         myImage.setAttribute('src', 'static/coffee_machine.jpg');
         setTimeout(function() {
             myImage.setAttribute('src', 'static/coffee_mug.jpg');
@@ -77,6 +79,18 @@
     myImage.addEventListener('click', 
                              function(evt) { 
                                 makeCoffee('brew'); 
+                                console.dir(evt); });
+    espresso.addEventListener('click',
+                             function(evt) { 
+                                makeCoffee('espresso'); 
+                                console.dir(evt); });
+    latte.addEventListener('click',
+                             function(evt) { 
+                                makeCoffee('latte'); 
+                                console.dir(evt); });
+    hotChocolate.addEventListener('click',
+                             function(evt) { 
+                                makeCoffee('hot chocolate'); 
                                 console.dir(evt); });
 
     // use this JavaScript object in further study step
