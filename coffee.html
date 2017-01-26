@@ -102,6 +102,16 @@
         "hot chocolate": 2.50
     };
 
+    function revenue() {
+        // calculate total price ordered coffee in shop
+        var total = 0;
+        for (var i = 0; i < drinkOrdered.length; i++){
+            total += prices[drinkOrdered[i]];
+        }
+        console.log("total = " + total);
+        return total;
+    }
+
 
 </script>
 
