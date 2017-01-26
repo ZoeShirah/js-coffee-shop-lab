@@ -51,8 +51,12 @@
     var myImage = document.getElementById("coffee-image");
     myImage.setAttribute('src', 'static/coffee_beans.jpg');
 
+    var drinkOrdered = [];
+    //var drinkType;
 
-    function makeCoffee(evt){
+
+    function makeCoffee(drinkType){
+        console.log(drinkType);
         myImage.setAttribute('src', 'static/coffee_machine.jpg');
         setTimeout(function() {
             myImage.setAttribute('src', 'static/coffee_mug.jpg');
@@ -64,13 +68,16 @@
         setTimeout(function() {
             myImage.setAttribute('src', 'static/coffee_beans.jpg');
         }, 4000);
-        console.dir(evt);
+        drinkOrdered.push(drinkType);
+        console.log("drinkOrdered: " + drinkOrdered);
+        // console.dir(evt);
     }
 
-    myImage.addEventListener('click', makeCoffee);
-
-    var myRevenueMessage;
-
+    //myImage.addEventListener('click', makeCoffee);
+    myImage.addEventListener('click', 
+                             function(evt) { 
+                                makeCoffee('brew'); 
+                                console.dir(evt); });
 
     // use this JavaScript object in further study step
 
